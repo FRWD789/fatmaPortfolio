@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+
+/* ----- REGULAR ----- */
+@font-face {
+  font-family: "CargoWalterNeueVariable";
+  src: url("/fonts/CargoWalterNeueVariable.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----- ITALIC ----- */
+@font-face {
+  font-family: "CargoWalterNeueVariable";
+  src: url("/fonts/CargoWalterNeueItalicVariable.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+@theme {
+  --font-cargo-walter-neue-variable: "CargoWalterNeueVariable", sans-serif;
+}
+
+@layer base {
+  /* Define responsive font sizes first */
+  .responsive-text {
+    font-size: clamp(16px, 1vw,18px);
+  }
+
+  h1.responsive-text {
+    font-size: clamp(24px, 1.5rem + 2vw, 48px);
+  }
+
+  h2.responsive-text {
+    font-size: clamp(20px, 1.25rem + 1.5vw, 36px);
+  }
+
+  h3.responsive-text {
+    font-size: clamp(18px, 1.125rem + 1vw, 30px);
+  }
+
+  /* Apply to body */
+  body {
+    @apply font-cargo-walter-neue-variable text-gray-900 bg-white;
+  }
+}
