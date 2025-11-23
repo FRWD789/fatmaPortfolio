@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import GalleryGrid from '../components/GalleryGrid'
 import { getProjects, getSettings } from '../lib/sanity'
 import type { PortfolioSettings, Project } from '../lib/types'
@@ -97,19 +97,19 @@ export default function Home() {
     </div>
   )
 }
-function Bio({ bio }:{bio:string}) {
-  return (
-    <p className="text-gray-700">
-     {bio
-    .split(".")
-    .filter(line => line.trim() !== "") // remove empty strings
-    .map((line, index) => (
-      <React.Fragment key={index}>
-        {line.trim()}.
-        <br />
-        <br />
-      </React.Fragment>
-    ))}
-    </p>
-  );
-}
+// function Bio({ bio }:{bio:string}) {
+//   return (
+//     <p className="text-gray-700">
+//      {bio
+//     .split(".")
+//     .filter(line => line.trim() !== "") // remove empty strings
+//     .map((line, index) => (
+//       <React.Fragment key={index}>
+//         {line.trim()}.
+//         <br />
+//         <br />
+//       </React.Fragment>
+//     ))}
+//     </p>
+//   );
+// }
