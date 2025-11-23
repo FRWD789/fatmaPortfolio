@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Project } from '../lib/types';
 import { urlFor } from '../lib/sanity';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
@@ -90,8 +90,12 @@ export default function GalleryGrid({ project }: GalleryGridProps) {
 
   {/* Title + Year */}
   <div className="flex md:flex-row  flex-col w-full gap-2">
-    <div className="md:w-[30%] font-black capitalize">{project.title}</div>
-    <div className="flex-1 text-sm text-gray-600 md:pl-4 ">{project.year}</div>
+    <div className="md:w-[30%] font-semibold capitalize">{project.title}</div>
+    <div className='flex flex-1 justify-between'>
+      <div className="text-sm text-gray-600 md:pl-4 ">{project.year}</div>
+      <div className="text-sm text-gray-600  ">{project.category}</div>
+    </div>
+    
   </div>
 
   {/* Description + Image */}
@@ -99,7 +103,7 @@ export default function GalleryGrid({ project }: GalleryGridProps) {
     
     {/* Description (optional) */}
     <div className="md:w-[30%]  ">
-      <p className=' max-w-full font-thi text-gray-700 wrap-break-word'>{project.description}</p>
+      <p className=' max-w-full text-left text-sm font-thin text-gray-700 wrap-break-word'>{project.description}</p>
     </div>
 
     {/* Image Viewer */}
